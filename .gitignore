@@ -1,0 +1,18 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Results and personal outputs
+results/
+*.html
+*.json
+
+# Sensitive configuration with API keys
+gw_utils/config.yaml
