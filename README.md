@@ -73,7 +73,7 @@ docker build -t geowifi:latest .
 ## 🔎 Usage
 
 ```
-usage: geowifi.py [-h] [-s {bssid,ssid}] [-o {map,json}] identifier
+usage: geowifi.py [-h] [-s {bssid,ssid}] [-o {map,json}] [--country COUNTRY] [--city CITY] identifier
 
 Search for information about a network with a specific BSSID or SSID.
 
@@ -86,18 +86,28 @@ options:
                         Specifies whether to search by BSSID or SSID (default: bssid)
   -o {map,json}, --output-format {map,json}
                         Specifies the output format for the search results (default: map)
+  --country COUNTRY     Filter search by country code (e.g. UY, US, ES)
+  --city CITY           Filter search by city name (e.g. "San Jose", "Montevideo")
 ```
 
 - Search by BSSID:
 
-```
+```bash
 python3 geowifi.py -s bssid <input>
 ```
 
 - Search by SSID:
 
-```
+```bash
 python3 geowifi.py -s ssid <input>
+```
+
+- Search by SSID with Country / City filters (Wigle):
+
+```bash
+python3 geowifi.py -s ssid <input> --country <country_code>
+python3 geowifi.py -s ssid <input> --city <city_name>
+python3 geowifi.py -s ssid <input> --country UY --city "San Jose"
 ```
 
 It is possible to export the results in json format using the `-o json` parameter and show the locations on html map using `-o map`.
